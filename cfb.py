@@ -92,8 +92,8 @@ for team in teams[1:]:
 	mx = max(sag, anh, bil, col, mas, wol, fpi)
 	mn = min(sag, anh, bil, col, mas, wol, fpi)
 
-	# comp_avg = (sag+anh+bil+col+mas+wol+fpi)/175.0
-	comp_avg = (sag+anh+bil+col+mas+wol+fpi-mx-mn)/125.0
+	comp_avg = (sag+anh+bil+col+mas+wol+fpi)/175.0
+	# comp_avg = (sag+anh+bil+col+mas+wol+fpi-mx-mn)/125.0
 
 	#Human Average
 	if not isinstance(team[10], int):
@@ -107,8 +107,9 @@ for team in teams[1:]:
 		coa = max(26.0 - float(team[98]), 0.0)
 
 	hum_avg = (ap+coa)/50.0
+	print hum_avg
 
-	#Your average 50% Comp, 50% Human
+	#Your average 2/3 Comp, 1/3 Human
 	my_avg = (comp_avg+comp_avg+hum_avg)/3.0
 
 	# if not isinstance(team[26], int):
@@ -123,33 +124,39 @@ for team in teams[1:]:
 		# print team[0]
 		# print sag, anh, bil, col, mas, wol, fpi
 
-# scores.sort(key=lambda x: x[2], reverse=True)
-# print "========================================="
-# print "            Computer Rankings         "
-# print "========================================="
-# for i in range(len(scores)):
-# 	print str(i+1)+" "+str(scores[i][0])+" "+str(scores[i][2])
 
+scores.sort(key=lambda x: x[3], reverse=True)
+print "========================================="
+print "            Human Rankings         "
+print "========================================="
+for i in range(40):
+	print str(i+1)+" "+str(scores[i][0])
+	# +" "+str(scores[i][3])
 
-# scores.sort(key=lambda x: x[3], reverse=True)
-# print "========================================="
-# print "            Human Rankings         "
-# print "========================================="
-# for i in range(len(scores)):
-# 	print str(i+1)+" "+str(scores[i][0])+" "+str(scores[i][3])
+scores.sort(key=lambda x: x[2], reverse=True)
+print "========================================="
+print "            Computer Rankings         "
+print "========================================="
+for i in range(40):
+	print str(i+1)+" "+str(scores[i][0])
+	# " "+str(scores[i][2])
 
 scores.sort(key=lambda x: x[4], reverse=True)
 print "========================================="
 print "            Abhi's Rankings         "
 print "========================================="
-for i in range(25):
-	print '<tr>'
-	print "<td>" + str(i+1)+"</td>"
-	print "<td>" + str(scores[i][0]) + "</td>"
-	print "<td>" + str(round(scores[i][4], 3)) + "</td>"
-	print "<td>" + "</td>"
-	print "<td>" + "</td>"
-	print "<td>" + "</td>"
-	print '</tr>'
+for i in range(40):
+	print str(i+1)+" "+str(scores[i][0])
+	# " "+str(scores[i][4])
+
+# for i in range(25):
+# 	print '<tr>'
+# 	print "<td>" + str(i+1)+"</td>"
+# 	print "<td>" + str(scores[i][0]) + "</td>"
+# 	print "<td>" + str(round(scores[i][4], 3)) + "</td>"
+# 	print "<td>" + "</td>"
+# 	print "<td>" + "</td>"
+# 	print "<td>" + "</td>"
+# 	print '</tr>'
 
 
