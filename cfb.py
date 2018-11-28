@@ -157,7 +157,7 @@ scores.sort(key=lambda x: x[3], reverse=True)
 # print "            Human Rankings         "
 # print "========================================="
 for i in range(40):
-	scores[i].append(i)
+	scores[i].append(i+1)
 # 	print str(i+1)+" "+str(scores[i][0])
 # 	# +" "+str(scores[i][3])
 
@@ -166,7 +166,7 @@ scores.sort(key=lambda x: x[2], reverse=True)
 # print "            Computer Rankings         "
 # print "========================================="
 for i in range(40):
-	scores[i].append(i)
+	scores[i].append(i+1)
 # 	print str(i+1)+" "+str(scores[i][0])
 # 	# " "+str(scores[i][2])
 
@@ -174,7 +174,7 @@ scores.sort(key=lambda x: x[4], reverse=True)
 print "========================================="
 print "            Abhi's Rankings         "
 print "========================================="
-for i in range(40):
+for i in range(50):
 	print str(i+1)+" "+str(scores[i][0])+" "+str(round(scores[i][4], 3))
 
 for i in range(25):
@@ -182,8 +182,9 @@ for i in range(25):
 	print "<td>" + str(i+1)+"</td>"
 	print "<td>" + str(scores[i][0]) + "</td>"
 	print "<td>" + str(round(scores[i][4], 3)) + "</td>"
+	print "<td></td>"
 	print "<td>" + str(scores[i][-2])+ "</td>"
 	print "<td>" + str(scores[i][-1])+ "</td>"
 	print "<td>" + "</td>"
-# 	print '</tr>'
+	print '</tr>'
 
