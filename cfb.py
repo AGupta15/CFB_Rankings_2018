@@ -2,7 +2,7 @@
 
 dataset = []
 import csv
-with open('rankings_w14a.csv', 'rb') as csvfile:
+with open('rankings_w15.csv', 'rb') as csvfile:
 	reader = csv.reader(csvfile, delimiter=' ', quotechar='|')
 	for row in reader:
 		if len(row) > 0:
